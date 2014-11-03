@@ -18,9 +18,21 @@ body {
   background-color: #eee;
   border-radius: 6px;
   padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+  overflow:auto;
+
+    form{
+      input{
+        line-height: normal;
+        display: block;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+    .comicsList{
+      li{
+        list-style:none;
+        display:inline-block;
+        float:left;
+      }
+    }
   }
-}
