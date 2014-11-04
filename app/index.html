@@ -24,7 +24,7 @@
   <body>
 
     <div class="hero-unit">
-      <form id="comic-form" action="index.html" method="post">
+      <!--<form id="comic-form" action="index.html" method="post">
 
         Title:<input id="titleInput" type="text" name="some_name" value="">
 
@@ -34,13 +34,22 @@
 
         <button name="button">Submit</button>
 
-      </form>
-
+      </form>-->
+      <div id="comicsForm"></div>
 
       <div id="comics"></div>
 
       <script type="text/template" id="comic">
-        <li>Title: <%= title %>, Publisher: <%= publisher %>, Staring: <%= hero %></li>
+        <li id="<%=_id%>">Title: <%= title %>, Publisher: <%= publisher %></li>
+      </script>
+
+      <script type="text/template" id="inputScript">
+        <form id="comicInput">
+          <input type="text" id="comicTitle" placeholder="Title">
+          <input type="text" id="comicPublisher" placeholder="Publisher">
+          <button name="button">Submit</button>
+        </form>
+
       </script>
 
     </div>
@@ -53,11 +62,19 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script type="text/javascript">
+        window.App = {};
+        App.Models = {};
+        App.Collections = {};
+        App.Views = {};
+    </script>
+
         <!-- build:js scripts/main.js -->
 
         <script src="scripts/models/comic_model.js"></script>
         <script src="scripts/collections/comic_collection.js"></script>
         <script src="scripts/views/comic_view.js"></script>
+        <script src="scripts/views/add_comic_view.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

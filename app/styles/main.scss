@@ -15,24 +15,24 @@ body {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color: #eee;
+  background-color:HSLA(29, 53%, 77%, 1);
   border-radius: 6px;
   padding: 60px;
   overflow:auto;
 
-    form{
-      input{
-        line-height: normal;
-        display: block;
-        margin: 0;
-        margin-bottom: 10px;
-      }
     }
-    .comicsList{
-      li{
-        list-style:none;
-        display:inline-block;
-        float:left;
+#comics{
+  .comicsList{
+    padding:0;
+    li{
+      list-style:none;
+      display:block;
+      cursor:pointer;
+      background-color: lightgrey;
+      margin-bottom: 10px;
+      &:hover{
+        background-color:red;
       }
     }
   }
+}

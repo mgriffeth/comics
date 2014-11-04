@@ -1,29 +1,43 @@
-var ComicsView = Backbone.View.extend({
+
+//console.log('here');
+(function () {
+//console.log('here2');
+  App.Views.ComicsView = Backbone.View.extend({
 
 
-  tagName: 'ul',
-  className: 'comicsList',
+    tagName: 'ul',
+    className: 'comicsList',
 
-  initialize: function(options){
-    console.log('View Initialized');
-    this.render(options.collection);
-  },
+    initialize: function () {
 
-  render: function(collection){
-    var template = $('#comic').html();
-    var rendered = _.template(template);
+      //console.log('View Initialized');
 
-    var self = this;
+      this.render();
 
+      //App.comics_list.on('sync', this.render, this);
+      //App.comics_list.on('destroy', this.render, this);
+    },
 
-    _.each(collection.models,function(x){
-    //  console.log(x.get('title'));
-    self.$el.append(rendered(x.attributes));
+    render: function () {
 
-    });
-    console.log(this.el);
-    $('#comics').html(this.el);
+      var self = this;
+    //  console.log('here in render');
+      var template = $('#comic').html();
+      var rendered = _.template(template);
 
-    return this;
-  }
-});
+      this.$el.empty();
+
+      _.each(App.comics_list.models,function(x){
+       //console.log(x.get('title'));
+      self.$el.append(rendered(x.attributes));
+
+      });
+      console.log(this.el);
+
+      $('#comics').html(this.el);
+
+      return this;
+      console.log('here3');
+    }
+  });
+}());

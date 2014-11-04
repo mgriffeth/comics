@@ -1,4 +1,6 @@
-var Comic = Backbone.Model.extend({
+
+(function(){
+  App.Models.Comic = Backbone.Model.extend({
   defaults:{
     title:'',
     publisher:'',
@@ -12,3 +14,4 @@ var Comic = Backbone.Model.extend({
   }
 
 });
+}());
