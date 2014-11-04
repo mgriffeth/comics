@@ -19,19 +19,30 @@ body {
   border-radius: 6px;
   padding: 60px;
   overflow:auto;
+  padding:0;
 
     }
 #comics{
   .comicsList{
     padding:0;
+    width:100%;
+
     li{
       list-style:none;
       display:block;
+      overflow:auto;
       cursor:pointer;
       background-color: lightgrey;
       margin-bottom: 10px;
+      border-radius:6px;
+      padding-left:10px;
+      //width:80%;
+
       &:hover{
         background-color:red;
+      }
+      button{
+        float:right;
       }
     }
   }
