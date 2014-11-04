@@ -8,14 +8,18 @@
     tagName: 'ul',
     className: 'comicsList',
 
+    events:{
+      'click li': 'deleteComic'
+    },
+
     initialize: function () {
 
-      //console.log('View Initialized');
+      console.log('View Initialized');
 
       this.render();
 
-      //App.comics_list.on('sync', this.render, this);
-      //App.comics_list.on('destroy', this.render, this);
+      App.comics_list.on('sync', this.render, this);
+      App.comics_list.on('destroy', this.render, this);
     },
 
     render: function () {
@@ -37,7 +41,19 @@
       $('#comics').html(this.el);
 
       return this;
-      console.log('here3');
+
+    },
+
+    deleteComic: function (e) {
+      e.preventDefault();
+      console.log('delete '+ e.target.id);
+      var deleteId = $(e.target).attr('id');
+      //console.log(deleteId);
+      var toDelete = App.comics_list.get(deleteId);
+    //  console.log(deleteId + "and again");
+      toDelete.destroy();
+
+
     }
   });
 }());

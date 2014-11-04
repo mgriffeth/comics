@@ -11,7 +11,7 @@ App.Views.ComicAdd = Backbone.View.extend({
     },
 
     render: function(){
-      console.log('3');
+    //  console.log('3');
       var form_html = $('#inputScript').html();
       this.$el.html(form_html);
 
@@ -26,7 +26,8 @@ App.Views.ComicAdd = Backbone.View.extend({
         publisher:publisher
       });
 
-      App.comics_list.add(comic).save();
+      App.comics_list.add(comic).save();x
+
       $(inputScript)[0].reset;
 
 
