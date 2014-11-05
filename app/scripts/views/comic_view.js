@@ -9,7 +9,7 @@
     className: 'comicsList',
 
     events:{
-      'click button': 'deleteComic'
+      'click li': 'deleteComic'
     },
 
     initialize: function () {

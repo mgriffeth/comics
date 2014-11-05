@@ -15,13 +15,20 @@ body {
   font-size: 18px;
   font-weight: 200;
   line-height: 30px;
-  background-color:HSLA(29, 53%, 77%, 1);
+  background-color:HSLA(340, 4%, 67%, 1);
   border-radius: 6px;
   padding: 60px;
   overflow:auto;
   padding:0;
 
     }
+#comicsForm{
+  display:block;
+  text-align:center;
+  margin-top:15px;
+}
+
+
 #comics{
   .comicsList{
     padding:0;
@@ -29,12 +36,13 @@ body {
 
     li{
       list-style:none;
+      position:relative;
       display:block;
       overflow:auto;
       cursor:pointer;
       background-color: lightgrey;
       margin-bottom: 10px;
-      border-radius:6px;
+      //border-radius:6px;
       padding-left:10px;
       //width:80%;
 
@@ -42,7 +50,22 @@ body {
         background-color:red;
       }
       button{
-        float:right;
+      position: absolute;
+      border-radius: 10px;
+      height: 27px;
+      padding: 0px;
+      margin-top: 1px;
+      border-style: none;
+        span{
+          padding:6px;
+        }
+      }
+      .deleteBtn{
+        right: .5em;
+      }
+      .editBtn{
+        right: 4em;
+
       }
     }
   }

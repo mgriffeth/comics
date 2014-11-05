@@ -26,9 +26,9 @@ App.Views.ComicAdd = Backbone.View.extend({
         publisher:publisher
       });
 
-      App.comics_list.add(comic).save();x
+      App.comics_list.add(comic).save();
 
-      $(inputScript)[0].reset;
+      $('#comicInput')[0].reset;
 
 
     }
