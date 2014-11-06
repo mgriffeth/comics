@@ -7,12 +7,13 @@
         },
         routes:{
             '':'home',
-            'edit/:id': 'editComic'
+            'edit/:id': 'editComic',
+            'add': 'addComic'
         },
 
         home: function(){
             //console.log('heeellloooo');
-            new App.Views.ComicAdd();
+          //  new App.Views.ComicAdd();
             new App.Views.ComicsView({ collection: App.comics_list });
         },
         editComic:function(id){
@@ -21,6 +22,9 @@
             new App.Views.SingleComic({ comic: c });
 
 
+        },
+        addComic: function(){
+          new App.Views.ComicAdd();
         }
 
     });

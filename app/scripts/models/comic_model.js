@@ -3,6 +3,7 @@
   App.Models.Comic = Backbone.Model.extend({
   defaults:{
     title:'',
+    issue:'',
     publisher:'',
     hero:'',
     description:'',

@@ -1,13 +1,15 @@
 (function(){
 
 App.Views.ComicAdd = Backbone.View.extend({
-    el: '#comicsForm',
+    //el: '#comicsForm',
     events:{
       'submit #comicInput': 'addComic'
     },
 
     initialize: function(){
       this.render();
+      $('#comics').html(this.$el);
+
     },
 
     render: function(){
@@ -26,9 +28,15 @@ App.Views.ComicAdd = Backbone.View.extend({
         publisher:publisher
       });
 
-      App.comics_list.add(comic).save();
+      App.comics_list.add(comic).save(null,{
+        success: function(){
+          App.Router.navigate('',{trigger:true});
+        }
+      });
 
-      $('#comicInput')[0].reset();
+      //$('#comicInput')[0].reset();
+
+
 
 
     }

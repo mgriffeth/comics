@@ -6,7 +6,8 @@
     className: 'singleComic',
 
     events:{
-      'submit #updateForm' : 'updateComic'
+      'click #updateBtn' : 'updateComic',
+      'click #deleteBtn': 'deleteComic'
     },
     template: _.template($('#singleComic').html()),
 
@@ -30,13 +31,22 @@
 
     this.options.comic.set({
       title: $('#updateTitle').val(),
+      issue: $('#updateIssue').val(),
       publisher: $('#updatePublisher').val(),
-      hero: $('#updateHero').val()
+      hero: $('#updateHero').val(),
+      description: $('#updateDescription').val()
     })
     this.options.comic.save();
 
-    App.router.navigate('', {trigger: true});
+    App.Router.navigate( " ", {trigger: true});
 
+  },
+
+  deleteComic: function(e){
+    e.preventDefault();
+    this.options.comic.destroy();
+    // this.options.comic.save();
+    App.Router.navigate( '', {trigger: true});
   }
 
 

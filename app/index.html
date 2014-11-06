@@ -22,8 +22,9 @@
     <!-- endbuild -->
   </head>
   <body>
-
+    <a href="#/add"> + </a>
     <div class="hero-unit">
+
       <!--<form id="comic-form" action="index.html" method="post">
 
         Title:<input id="titleInput" type="text" name="some_name" value="">
@@ -39,10 +40,32 @@
 
       <div id="comics"></div>
 
+      <script type="text/template" id="inputScript">
+        <form id="comicInput">
+          <input type="text" id="comicTitle" placeholder="Title">
+          <input type="text" id="comicIssue" placeholder="no.">
+          <input type="text" id="comicPublisher" placeholder="Publisher">
+          <button name="button">Submit</button>
+        </form>
+
+      </script>
+
+
+
+
+
+
       <script type="text/template" id="comic">
+
+
         <li id="<%=_id%>">
         <a href="#/edit/<%= _id %>">
-          <div class="comicHeader">Title: <%= title %>, Publisher: <%= publisher %></div>
+          <div class="comicHeader">
+            <p>Title: <%= title %></p>
+            <p> no.<%= issue %></p>
+            <p> Publisher: <%= publisher %></p<
+
+          </div>
           <% if( hero !== ''){ %>
           <div class="comicHero">Hero: <%= hero %></div>
           <% } %>
@@ -53,25 +76,21 @@
 
       </script>
 
-      <script type="text/template" id="inputScript">
-        <form id="comicInput">
-          <input type="text" id="comicTitle" placeholder="Title">
-          <input type="text" id="comicPublisher" placeholder="Publisher">
-          <button name="button">Submit</button>
-        </form>
 
-      </script>
 
 
       <script type="text/template" id="singleComic">
           <form id="updateForm">
             <div id="comicInfo">
-                <input type="text" id="updateTitle" value="<%= title %>">
-                <input type="text" id="updatePublisher" value="<%= publisher %>">
-                <input type="text" id="updateHero" value="<%= hero %>">
+              <input type="text" id="updateTitle" value="<%= title %>"placeholder="title">
+              <input type="text" id="updateIssue" value="<%= issue %>" placeholder="issue">
+              <input type="text" id="updatePublisher" value="<%= publisher %>"placeholder="publisher">
+              <input type="text" id="updateHero" placeholder="hero name"value="<%= hero %>">
             </div>
             <div id="commentsUpdate">
-                <textarea id="updateDescription"><%= description %></textarea>
+                <textarea id="updateDescription" placeholder="description"><%= description %></textarea>
+                <button id="updateBtn">submit</button>
+                <button id="deleteBtn">delete</button>
 
             </div>
           </form>
