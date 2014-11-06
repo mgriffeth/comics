@@ -40,9 +40,15 @@
       <div id="comics"></div>
 
       <script type="text/template" id="comic">
-        <li id="<%=_id%>">Title: <%= title %>, Publisher: <%= publisher %>
-        <button id="<%=_id%>" class="deleteBtn"><span>delete</span></button>
-        <button id="<%=_id%>"class="editBtn" ><span>edit</span></button>
+        <li id="<%=_id%>">
+        <a href="#/edit/<%= _id %>">
+          <div class="comicHeader">Title: <%= title %>, Publisher: <%= publisher %></div>
+          <% if( hero !== ''){ %>
+          <div class="comicHero">Hero: <%= hero %></div>
+          <% } %>
+          <% if( description !== ''){ %>
+          <div class="comicDesc">Description: <%= description %></div>
+          <% } %>
         </li>
 
       </script>
@@ -53,6 +59,23 @@
           <input type="text" id="comicPublisher" placeholder="Publisher">
           <button name="button">Submit</button>
         </form>
+
+      </script>
+
+
+      <script type="text/template" id="singleComic">
+          <form id="updateForm">
+            <div id="comicInfo">
+                <input type="text" id="updateTitle" value="<%= title %>">
+                <input type="text" id="updatePublisher" value="<%= publisher %>">
+                <input type="text" id="updateHero" value="<%= hero %>">
+            </div>
+            <div id="commentsUpdate">
+                <textarea id="updateDescription"><%= description %></textarea>
+
+            </div>
+          </form>
+
 
       </script>
 
@@ -71,6 +94,7 @@
         App.Models = {};
         App.Collections = {};
         App.Views = {};
+        App.Routers = {};
     </script>
 
         <!-- build:js scripts/main.js -->
@@ -79,6 +103,8 @@
         <script src="scripts/collections/comic_collection.js"></script>
         <script src="scripts/views/comic_view.js"></script>
         <script src="scripts/views/add_comic_view.js"></script>
+        <script src="scripts/views/single_comic_view.js"></script>
+        <script src="scripts/routers/comic_router.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>

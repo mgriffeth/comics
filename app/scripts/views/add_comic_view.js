@@ -28,10 +28,10 @@ App.Views.ComicAdd = Backbone.View.extend({
 
       App.comics_list.add(comic).save();
 
-      $('#comicInput')[0].reset;
+      $('#comicInput')[0].reset();
 
 
     }
-})
+});
 
-}())
+}());

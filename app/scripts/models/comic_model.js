@@ -4,13 +4,16 @@
   defaults:{
     title:'',
     publisher:'',
-    hero:''
+    hero:'',
+    description:'',
+    rating:''
   },
 
   idAttribute:'_id',
 
   initialize:function(){
-    console.log('Comic instance created.');
+    var c = this.get('title');
+    //console.log(c + " was added.");
   }
 
 });

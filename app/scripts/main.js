@@ -1,15 +1,15 @@
-console.log('EXCELSIOR!!!');
-new App.Views.ComicAdd();
+//console.log('EXCELSIOR!!!');
+//new App.Views.ComicAdd();
  App.comics_list = new App.Collections.Comics();
 
- var comic;
+ //var comic;
   // title,
   // publisher,
   // hero;
 
   App.comics_list.fetch().done(function(){
-    console.log(App.comics_list);
-    new App.Views.ComicsView();
+    //console.log(App.comics_list);
+    App.Router = new App.Routers.AppRouter();
   });
 
   // $('#comic-form').submit(function(event){

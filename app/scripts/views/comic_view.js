@@ -4,44 +4,40 @@
 //console.log('here2');
   App.Views.ComicsView = Backbone.View.extend({
 
-
     tagName: 'ul',
     className: 'comicsList',
 
     events:{
-      'click li': 'deleteComic'
+      //'click li': 'deleteComic'
     },
+
+    template: _.template($('#comic').html()),
 
     initialize: function () {
 
-      console.log('View Initialized');
-
       this.render();
 
+      this.collection.off();
+      console.log();
       App.comics_list.on('sync', this.render, this);
-      App.comics_list.on('destroy', this.render, this);
+      //App.comics_list.on('destroy', this.render, this);
+
+      $('#comics').html(this.$el);
+
     },
 
     render: function () {
 
       var self = this;
     //  console.log('here in render');
-      var template = $('#comic').html();
-      var rendered = _.template(template);
+       this.$el.empty();
 
-      this.$el.empty();
-
-      _.each(App.comics_list.models,function(x){
-       //console.log(x.get('title'));
-      self.$el.append(rendered(x.attributes));
-
+      this.collection.forEach(function (c) {
+        console.log(c);
+        self.$el.append(self.template(c.toJSON()));
       });
-      console.log(this.el);
-
-      $('#comics').html(this.el);
 
       return this;
-
     },
 
     deleteComic: function (e) {
