@@ -4,9 +4,10 @@
 
 // Custom Styles
 body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  background: url('http://www.tmstash.com/wp-content/uploads/2014/02/comic-book-faces.jpg');
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color:black
+;
 }
 
 .hero-unit {
@@ -20,6 +21,25 @@ body {
   padding: 60px;
   overflow:auto;
   padding:0;
+  position:relative;
+  h1{
+    font-size: 6em;
+    font-family: 'Bangers', cursive;
+    text-align:center;
+
+  }
+  #mainAdd{
+    display:block;
+
+    margin:0;
+
+    button{
+      float: right;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
 
     }
 #comicsForm{
@@ -31,21 +51,22 @@ body {
 
 #comics{
   .comicsList{
-    padding:0;
+    padding:10px;
     width:100%;
+    overflow:auto;
 
     li{
-      list-style:none;
-      position:relative;
-      display:block;
-      overflow:auto;
-      cursor:pointer;
+      list-style: none;
+      position: relative;
+      display: block;
+      float: left;
+      overflow: auto;
+      cursor: pointer;
       background-color: lightgrey;
-      margin-bottom: 10px;
-      //border-radius:6px;
-      padding-left:10px;
-      //width:80%;
-
+      margin: 10px;
+      width: 31%;
+      height:20em;
+      text-align: center;
       &:hover{
         background-color:red;
       }
@@ -69,4 +90,25 @@ body {
       }
     }
   }
+}
+#comicInput{
+  width:50%;
+  margin:0 auto;
+    input{
+      display: block;
+      margin: 0 auto 10px;
+      width:inherit;
+    }
+    button{
+      display: block;
+      margin: 0 auto 10px;
+      width: inherit;
+    }
+    textarea{
+      display: block;
+      margin: 0 auto 10px;
+      width: inherit;
+      height:100px;
+    }
+
 }

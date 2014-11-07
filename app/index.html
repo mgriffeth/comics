@@ -10,9 +10,10 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
+
     <!-- endbower -->
     <!-- endbuild -->
-
+      <link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -22,9 +23,10 @@
     <!-- endbuild -->
   </head>
   <body>
-    <a href="#/add"> + </a>
-    <div class="hero-unit">
 
+    <div class="hero-unit">
+      <h1>Get Comics</h1>
+      <a id="mainAdd" href="#/add"><button> + </button> </a>
       <!--<form id="comic-form" action="index.html" method="post">
 
         Title:<input id="titleInput" type="text" name="some_name" value="">
@@ -43,8 +45,10 @@
       <script type="text/template" id="inputScript">
         <form id="comicInput">
           <input type="text" id="comicTitle" placeholder="Title">
-          <input type="text" id="comicIssue" placeholder="no.">
+          <input type="text" id="comicIssue" placeholder="issue no.">
           <input type="text" id="comicPublisher" placeholder="Publisher">
+          <input type="text" id="comicHero" placeholder="Hero">
+          <textarea type="text" id="comicDescription" placeholder="Description"/>
           <button name="button">Submit</button>
         </form>
 
@@ -62,7 +66,7 @@
         <a href="#/edit/<%= _id %>">
           <div class="comicHeader">
             <p>Title: <%= title %></p>
-            <p> no.<%= issue %></p>
+            <p> Issue No.<%= issue %></p>
             <p> Publisher: <%= publisher %></p<
 
           </div>

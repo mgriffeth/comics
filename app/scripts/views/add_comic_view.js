@@ -30,7 +30,7 @@ App.Views.ComicAdd = Backbone.View.extend({
 
       App.comics_list.add(comic).save(null,{
         success: function(){
-          App.Router.navigate('',{trigger:true});
+          App.Router.navigate('',{ trigger : true });
         }
       });
 

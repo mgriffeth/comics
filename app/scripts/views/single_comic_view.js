@@ -36,17 +36,25 @@
       hero: $('#updateHero').val(),
       description: $('#updateDescription').val()
     })
-    this.options.comic.save();
+    this.options.comic.save(null,{
+      success: function(){
+        App.Router.navigate( " ", {trigger: true});
+      }
+    });
 
-    App.Router.navigate( " ", {trigger: true});
+
 
   },
 
   deleteComic: function(e){
     e.preventDefault();
-    this.options.comic.destroy();
+    this.options.comic.destroy(null,{
+      success: function(){
+          App.Router.navigate( '', {trigger: true});
+      }
+    });
     // this.options.comic.save();
-    App.Router.navigate( '', {trigger: true});
+
   }
 
 
