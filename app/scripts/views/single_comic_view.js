@@ -38,7 +38,7 @@
       description: $('#updateDescription').val()
     })
     this.options.comic.save()
-        App.Router.navigate( " ", {trigger: true});
+    App.Router.navigate( " ", {trigger: true});
 
 
 
@@ -50,7 +50,7 @@
     e.preventDefault();
     this.options.comic.destroy()
 
-          App.Router.navigate( '', {trigger: true});
+    App.Router.navigate( '', {trigger: true});
 
 
     // this.options.comic.save();
