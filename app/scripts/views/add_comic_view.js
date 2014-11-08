@@ -22,17 +22,22 @@ App.Views.ComicAdd = Backbone.View.extend({
       event.preventDefault();
       title = $('#comicTitle').val();
       publisher = $('#comicPublisher').val();
+      issue = $('#comicIssue').val();
+      image = $('#comicImage').val();
 
       comic = new App.Models.Comic({
         title: title,
-        publisher:publisher
+        publisher:publisher,
+        issue:issue,
+        image:image,
+
       });
 
-      App.comics_list.add(comic).save(null,{
-        success: function(){
+      App.comics_list.add(comic).save()
+
           App.Router.navigate('',{ trigger : true });
-        }
-      });
+
+      
 
       //$('#comicInput')[0].reset();
 

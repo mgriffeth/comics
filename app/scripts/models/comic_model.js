@@ -7,7 +7,8 @@
     publisher:'',
     hero:'',
     description:'',
-    rating:''
+    rating:'',
+    image:'http://www.comicbooktidbits.com/Generic%20Site%20Enty_files/image037.jpg'
   },
 
   idAttribute:'_id',

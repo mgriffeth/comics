@@ -33,14 +33,14 @@
       title: $('#updateTitle').val(),
       issue: $('#updateIssue').val(),
       publisher: $('#updatePublisher').val(),
+      image:$('#updateImage').val(),
       hero: $('#updateHero').val(),
       description: $('#updateDescription').val()
     })
-    this.options.comic.save(null,{
-      success: function(){
+    this.options.comic.save()
         App.Router.navigate( " ", {trigger: true});
-      }
-    });
+
+
 
 
 
@@ -48,11 +48,11 @@
 
   deleteComic: function(e){
     e.preventDefault();
-    this.options.comic.destroy(null,{
-      success: function(){
+    this.options.comic.destroy()
+
           App.Router.navigate( '', {trigger: true});
-      }
-    });
+
+
     // this.options.comic.save();
 
   }
