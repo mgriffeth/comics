@@ -111,6 +111,9 @@ App.Views.ComicAdd = Backbone.View.extend({
       issue = $('#comicIssue').val();
       image = $('#comicImage').val();
 
+
+
+
       comic = new App.Models.Comic({
         title: title,
         publisher:publisher,
@@ -238,10 +241,10 @@ App.Views.ComicAdd = Backbone.View.extend({
 }());
 
 //console.log('EXCELSIOR!!!');
-//new App.Views.ComicAdd();
+
  App.comics_list = new App.Collections.Comics();
 
- 
+
 
   App.comics_list.fetch().done(function(){
     //console.log(App.comics_list);
