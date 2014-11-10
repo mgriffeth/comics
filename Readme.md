@@ -1,3 +1,7 @@
-## Yo, I'm a Readme
+##my Comics wishlist app
 
-You should probably update me so people looking at your code have an idea what it is being used for :)
+made with javascript, underscore.js, yeoman,and backbone.js.
+
+to use: clone down my repo and then run both bower and npm install.
+
+
